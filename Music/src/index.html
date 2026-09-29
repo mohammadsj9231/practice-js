@@ -8,11 +8,23 @@
   </head>
 
   <body>
-    <!-- =========================
-         NAVBAR
-    ========================= -->
-
     <nav class="navbar">
+      <div class="side" id="menuBtn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </div>
+
       <a href="#home" class="logo"> NOIR </a>
 
       <ul class="nav-links">
@@ -35,16 +47,18 @@
 
       <div class="search-box">
         <input type="text" placeholder="Search..." />
-
         <button type="button">⌕</button>
       </div>
 
       <span class="nav-number"> 001 — 2026 </span>
     </nav>
 
-    <!-- =========================
-         HOME
-    ========================= -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#visual">Visual</a>
+      <a href="musics.html">Musics</a>
+    </div>
 
     <main id="home">
       <section class="hero">
@@ -67,18 +81,11 @@
           <a href="#about" class="hero-button"> Discover the story → </a>
         </div>
 
-        <!-- Concert crowd -->
-
         <div class="hero-image">
           <img src="../media/hero.jpg" alt="Concert crowd" />
-
           <span class="image-label"> Visual Archive / 01 </span>
         </div>
       </section>
-
-      <!-- =========================
-           MARQUEE
-      ========================= -->
 
       <section class="marquee">
         <div class="marquee-text">
@@ -86,20 +93,13 @@
         </div>
       </section>
 
-      <!-- =========================
-           ABOUT
-      ========================= -->
-
       <section class="about" id="about">
         <div class="section-top">
           <span class="section-number"> 02 </span>
-
           <span class="section-title"> About the project </span>
         </div>
 
         <div class="about-grid">
-          <!-- Person at live concert -->
-
           <div class="about-image">
             <img src="../media/visual.jpg" alt="Person at a live concert" />
           </div>
@@ -108,10 +108,8 @@
             <h2>
               Music
               <br />
-
               is
               <br />
-
               <span>visual.</span>
             </h2>
 
@@ -125,63 +123,39 @@
         </div>
       </section>
 
-      <!-- =========================
-           VISUAL ARCHIVE
-      ========================= -->
-
       <section class="visual" id="visual">
         <div class="section-top">
           <span class="section-number"> 03 </span>
-
           <span class="section-title"> Visual archive </span>
         </div>
 
         <div class="visual-grid">
-          <!-- Festival lights -->
-
           <div class="visual-item">
             <img src="../media/1.jpg" alt="Festival lights" />
-
             <span> Energy / 001 </span>
           </div>
 
-          <!-- Festival crowd -->
-
           <div class="visual-item">
             <img src="../media/2.jpg" alt="Festival crowd" />
-
             <span> Crowd / 002 </span>
           </div>
 
-          <!-- Concert lights -->
-
           <div class="visual-item">
             <img src="../media/3.jpg" alt="Concert lights" />
-
             <span> Motion / 003 </span>
           </div>
         </div>
       </section>
 
-      <!-- =========================
-           MANIFESTO
-      ========================= -->
-
       <section class="manifesto">
         <h2>
           Don't just
           <span>listen.</span>
-
           <br />
-
           Experience it.
         </h2>
       </section>
     </main>
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
 
     <footer>
       <div class="footer-logo">NOIR.</div>
@@ -191,12 +165,19 @@
 
         <div class="socials">
           <a href="#"> Instagram </a>
-
           <a href="#"> Behance </a>
-
           <a href="#"> Contact </a>
         </div>
       </div>
     </footer>
+
+    <script>
+      const menuBtn = document.querySelector("#menuBtn");
+      const mobileMenu = document.querySelector("#mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("active");
+      });
+    </script>
   </body>
 </html>
