@@ -1,0 +1,325 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080808;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+  --black: #080808;
+  --white: #f5f5f5;
+  --gray: #969696;
+  --line: #242424;
+  --accent: #c7ff36;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 50px);
+  max-width: 1400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(10, 10, 10, 0.65);
+
+  backdrop-filter: blur(15px);
+
+  z-index: 100;
+}
+
+
+/* =========================
+   NAVBAR LOGO
+========================= */
+
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+
+/* =========================
+   NAVBAR LINKS
+========================= */
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+
+  list-style: none;
+}
+
+.nav-links a {
+  color: #aaa;
+
+  font-size: 12px;
+
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box {
+  display: flex;
+  align-items: center;
+
+  height: 38px;
+
+  border: 1px solid #333;
+}
+
+.search-box input {
+  width: 120px;
+
+  padding: 0 12px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.search-box input::placeholder {
+  color: #666;
+}
+
+.search-box button {
+  width: 38px;
+  height: 100%;
+
+  border: none;
+  border-left: 1px solid #333;
+
+  background: transparent;
+
+  color: #aaa;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: var(--accent);
+  color: var(--black);
+}
+
+
+/* =========================
+   NAVBAR NUMBER
+========================= */
+
+.nav-number {
+  font-size: 11px;
+  color: #666;
+}
+
+
+/* =========================
+   RESPONSIVE — TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    width: calc(100% - 30px);
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-number {
+    display: none;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE — MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    top: 10px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+
+.songs-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 30px;
+  box-sizing: border-box;
+
+  margin-top: 7rem;
+}
+
+.music-card {
+  width: 280px;
+  padding: 14px;
+
+  background: #111;
+  color: #f5f5f5;
+
+  border: 1px solid #252525;
+  border-radius: 18px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  transition: 0.3s ease;
+}
+
+.music-card:hover {
+  transform: translateY(-6px);
+  border-color: #444;
+}
+
+.music-card img {
+  width: 100%;
+  height: 280px;
+
+  display: block;
+
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+.music-name {
+  margin: 16px 4px 5px;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.music-singer {
+  margin: 0 4px;
+
+  color: #999;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.music-min,
+.music-year {
+  display: inline-block;
+
+  margin: 16px 4px 2px;
+
+  color: #777;
+  font-size: 13px;
+}
+
+.music-year {
+  margin-left: 12px;
+}
+
+.music-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 16px;
+}
+
+.music-info .music-name {
+  margin: 0 4px 5px;
+}
+
+.music-info .music-singer {
+  margin: 0 4px;
+}
+
+.music-info .music-min,
+.music-info .music-year {
+  margin: 16px 4px 2px;
+}
+
+.play-card-btn-1, .play-card-btn-2, .play-card-btn-3, .play-card-btn-4 {
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid #333;
+  border-radius: 50%;
+
+  background: #c7ff36;
+  color: #080808;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+  margin-left: 5rem;
+}
+
+.play-card-btn-1:hover, .play-card-btn-2:hover, .play-card-btn-3:hover, .play-card-btn-4:hover {
+  transform: scale(1.08);
+  background: #fff;
+}
