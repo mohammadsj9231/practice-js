@@ -150,6 +150,7 @@ export class Player extends HTMLElement {
 
       audio.pause();
       playBtn.textContent = "▶";
+      this.song.stopTimer
 
     }
 
