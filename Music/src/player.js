@@ -53,8 +53,8 @@ export class Player extends HTMLElement {
             </div>
 
             <div class="time">
-              <span>00:00</span>
-              <span>00:00</span>
+              <span class='time-past'></span>
+              <span>${this.song.min}</span>
             </div>
 
           </div>
@@ -143,6 +143,8 @@ export class Player extends HTMLElement {
 
       audio.play();
       playBtn.textContent = "Ⅱ";
+      const timePast = document.querySelector('.time-past')
+      timePast.textContent = this.song.hesabmin()
 
     } else {
 
